@@ -1,32 +1,27 @@
 <?php
 session_start();
-$errors = array();
 // insert config.php
 
 include('config.php');
- include('header.php');
+include('header.php');
 
-if (isset($_POST['login'])) {
-  $username = mysqli_real_escape_string($db, $_POST['username']);
-  $password = mysqli_real_escape_string($db, $_POST['password']);
+if (isset($_POST['submit'])) {
+  $username = $_POST['username'];
+  $password = $_POST['password'];
 
-  if (empty($username)) { array_push($errors, "Username is required"); }
-  if (empty($password)) { array_push($errors, "Password is required"); }
+  // Vulnerable code - user input not sanitized before using in SQL query
+  $query = "SELECT * FROM users WHERE username='$username' AND password='$password'";
+  $result = mysqli_query($db, $query);
 
-  if (count($errors) == 0) {
-    $password = md5($password);
-    $query = "SELECT * FROM users WHERE username='$username' AND password='$password'";
-    $results = mysqli_query($db, $query);
-    if (mysqli_num_rows($results) == 1) {
-      $_SESSION['username'] = $username;
-      $_SESSION['success'] = "You are now logged in";
-      header('location: index.php');
-    } else {
-      array_push($errors, "Wrong username/password combination");
-    }
+  if (mysqli_num_rows($result) == 1) {
+    $_SESSION['username'] = $username;
+    header('location: shop.php');
+  } else {
+    echo "Invalid username or password.";
   }
 }
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -34,20 +29,14 @@ if (isset($_POST['login'])) {
 </head>
 <body>
   <h1>Login</h1>
-  <form method="post" action="login.php">
-    <?php include('errors.php'); ?>
-    <div>
-      <label>Username</label>
-      <input type="text" name="username" value="<?php echo $username; ?>">
-    </div>
-    <div>
-      <label>Password</label>
-      <input type="password" name="password">
-    </div>
-    <div>
-      <button type="submit" name="login">Login</button>
-    </div>
+  <form method="post">
+    <label for="username">Username:</label>
+    <input type="text" name="username" id="username">
+
+    <label for="password">Password:</label>
+    <input type="password" name="password" id="password">
+
+    <input type="submit" name="submit" value="Login">
   </form>
 </body>
 </html>
-~                
