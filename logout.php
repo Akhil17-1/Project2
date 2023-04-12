@@ -1,15 +1,13 @@
 <?php
-// start the session
 session_start();
 
-// insert config.php
-include('config.php');
-include('header.php');
-
-// destroy the session
+// Destroy all session data
 session_destroy();
 
-// redirect to the login page
-header('Location: login.php');
+// Redirect the user to the login page
+header("Location: login.php");
 exit;
 ?>
+~                                                                                                                                                                                                           
+~                                                                                                                                                                                                           
+~  
