@@ -3,8 +3,8 @@
 <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Green kart</title>
-
+        <title>Akhil's website</title>
+        
         <!-- Add your CSS files here -->
         <link rel="stylesheet" href="css/styles.css">
 
@@ -14,13 +14,13 @@
 
         <!-- Add any additional meta tags or links here -->
         <meta name="description" content="Your website description here">
-
+        
         <style>
                 /* Add your custom styles here */
                 header {
-                        background-color: #8BC34A;
+                        background-color: #000080;
                         padding: 10px 20px;
-                        color: white;
+                        color: #999;
                         display: flex;
                         justify-content: space-between;
                         align-items: center;
@@ -68,18 +68,19 @@
                 }
         </style>
 </head>
+<body>
         <header>
-                <div class="logo">Green kart</div>
+                <div class="logo">Akhil's Ecommerce</div>
                 <nav>
                         <ul>
-                                <li><a href="index.php">Home</a></li>
+                                <li><a href="#">Home</a></li>
                                 <li><a href="shop.php">Shop</a></li>
                 <?php if(isset($_SESSION['user_id'])) : ?>
                     <li><a href="logout.php">Logout</a></li>
                 <?php else : ?>
                     <li><a href="login.php">Login</a></li>
                 <?php endif; ?>
-                                <li><a href="contact.php">Contact</a></li>
+                                <li><a href="#">Contact</a></li>
                         </ul>
                 </nav>
         </header>
