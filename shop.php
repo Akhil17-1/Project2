@@ -1,3 +1,8 @@
+<?php
+session_start();
+$sessionId = session_id();
+// insert config.php
+
 include('config.php');
 include('header.php');
 
