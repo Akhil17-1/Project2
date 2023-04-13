@@ -1,7 +1,3 @@
-<?php
-session_start();
-// insert config.php
-
 include('config.php');
 include('header.php');
 
@@ -55,7 +51,7 @@ $results = mysqli_query($db, $query);
           <tr>
             <td>Bose QuietComfort Earbuds</td>
             <td>$279.99</td>
-            <td><a href="add_to_cart.php?id=7">Add to Cart</a></td>
+            <td><a href="bose.php?id=7">Add to Cart</a></td>
           </tr>
         </tbody>
       </table>
