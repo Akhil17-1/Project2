@@ -80,7 +80,11 @@
                 <?php else : ?>
                     <li><a href="login.php">Login</a></li>
                 <?php endif; ?>
-                                <li><a href="#">Contact</a></li>
-                        </ul>
-                </nav>
-        </header>
+                     ?php endif; ?>
+            <li><a href="contact.php">Contact</a></li>
+            <li><a href="users.php">users</a></li>
+        </ul>
+    </nav>
+</header>
+</body>
+</html>
