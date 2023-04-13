@@ -1,8 +1,7 @@
 <?php
 session_start();
-$sessionId = session_id();
-// insert config.php
 
+// insert config.php
 include('config.php');
 include('header.php');
 
@@ -56,11 +55,27 @@ $results = mysqli_query($db, $query);
           <tr>
             <td>Bose QuietComfort Earbuds</td>
             <td>$279.99</td>
-            <td><a href="bose.php?id=7">Add to Cart</a></td>
+            <td><a href="add_to_cart.php?id=7">Add to Cart</a></td>
+          </tr>
+          <tr>
+            <td>Apple MacBook Pro</td>
+            <td>$1499.99</td>
+            <td><a href="add_to_cart.php?id=8">Add to Cart</a></td>
+          </tr>
+          <tr>
+            <td>Google Pixel Buds</td>
+            <td>$179.99</td>
+            <td><a href="add_to_cart.php?id=9">Add to Cart</a></td>
+          </tr>
+          <tr>
+            <td>Samsung Galaxy Watch 3</td>
+            <td>$249.99</td>
+            <td><a href="add_to_cart.php?id=10">Add to Cart</a></td>
           </tr>
         </tbody>
       </table>
     </div>
   </div>
+  <?php include('footer.php'); ?>
 </body>
 </html>
