@@ -1,6 +1,6 @@
 <?php
 session_start();
-$sessionId = session_id();
+//$sessionId = session_id();
 // insert config.php
 
 include('config.php');
@@ -31,8 +31,7 @@ include('header.php');
 
   <p?><a href="contact.php"><span style="color: #1E90FF">contact</span></a></p>
 
-  <h2><a href="public_config.php"><span style="color: #FFA500">Powered by Akhil Reddy Duvvuru:</a></h2>
-
+ 
 </body>
 </html>
 
