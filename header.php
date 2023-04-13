@@ -82,7 +82,7 @@
                 <?php endif; ?>
                      ?php endif; ?>
             <li><a href="contact.php">Contact</a></li>
-            <li><a href="users.php">users</a></li>
+            
         </ul>
     </nav>
 </header>
