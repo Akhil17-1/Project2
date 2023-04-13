@@ -1,4 +1,4 @@
-    <?php
+<?php
 session_start();
 $sessionId = session_id();
 // insert config.php
@@ -12,6 +12,7 @@ if (isset($_POST['login']))
     $query = "SELECT * FROM users WHERE username='$username' AND password='$password'";
 
     $result = mysqli_query($db, $query);
+
 
         // Check if any rows were returned
         if (mysqli_num_rows($result)== 1) {
