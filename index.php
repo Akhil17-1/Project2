@@ -1,6 +1,6 @@
 <?php
 session_start();
-//$sessionId = session_id();
+$sessionId = session_id();
 // insert config.php
 
 include('config.php');
