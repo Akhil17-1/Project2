@@ -58,7 +58,7 @@ if (isset($_POST['register'])) {
         </div>
         <div>
           <label>Email</label>
-          <input type="email" name="email" value="<?php echo $email; ?>">
+          <input type="email" name="email" pattern="^[a-zA-Z0-9]+$" value="<?php echo $email; ?>">
         </div>
         <div>
           <label>Password</label>
